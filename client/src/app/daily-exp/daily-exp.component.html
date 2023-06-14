@@ -1,0 +1,42 @@
+<form [formGroup]="dailyExpForm">
+
+    <mat-form-field appearance="outline" width="100px">
+        <mat-label>Expense Date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field-space">
+        <mat-label>Expense Amount</mat-label>
+        <input matInput placeholder="Amount" required>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline" class="field-space">
+        <mat-select required>
+            <mat-option *ngFor="let category of expenseCategory" value="category">{{category}}</mat-option>
+        </mat-select>
+        <mat-label>Category</mat-label>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="field-space">
+        <input matInput placeholder="Simple placeholder">
+        <mat-label>Note</mat-label>
+    </mat-form-field>
+    <button mat-stroked-button color="primary" type="submit" [disabled]="!dailyExpForm.valid">Add</button>
+</form>
+
+<!-- {{dailyExpForm | json}} -->
+
+<!-- <form [formGroup]="profileForm">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form> -->
