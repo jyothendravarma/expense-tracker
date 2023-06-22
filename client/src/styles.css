@@ -11,14 +11,26 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-.field-space {
-    /* top | right | bottom | left */
-    padding: 0.5em;
-}
-
 .date-container {
     float: left;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+table {
+    width: 98%;
+    margin: auto;
+}
+
+.md-5 {
+    margin: 5px;
+}
+
+.neg-amt {
+    color: green
+}
+
+.pos-amt {
+    color: #caa153;
 }
