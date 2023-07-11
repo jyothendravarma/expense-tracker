@@ -3,7 +3,7 @@
     <mat-form-field appearance="outline" class="md-5">
         <mat-label>Expense Date</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="expenseDate">
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
