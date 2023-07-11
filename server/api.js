@@ -4,12 +4,16 @@ const router = express.Router()
 const db = require('./db.js');
 const mongodb = new db()
 
-router.use((req, res, next) => {
-
+router.use(async (req, res, next) => {   
    currentDateTime = new Date(Date.now())
    time = currentDateTime.toLocaleDateString() + " " + currentDateTime.toLocaleTimeString();
    console.log('Request Time: ', time)
    console.log(req.originalUrl)
+   try{
+      await mongodb.testConnection();
+   }catch{
+      return res.status(500).send("unable to establishe DB connection");
+   }
    next()
 })
 
@@ -27,7 +31,7 @@ router.post('/addExpense', async function (req, res) {
 
 router.get('/getExpenses', async function (req, res) {
    var records = await mongodb.getCollection()
-   console.log(records)
+   // console.log(records)
    res.status(200).json(records);
 })
 
