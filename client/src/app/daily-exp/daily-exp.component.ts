@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { DailyExpService } from '../@services/daily-exp.service';
 
 @Component({
@@ -11,11 +11,11 @@ export class DailyExpComponent implements OnInit {
 
     expenseCategories = ["Shopping", "Grocery", "RestroFood", "Bills", "EMI"];
 
-    dailyExpForm = new FormGroup({
-        expenseAmount: new FormControl('', Validators.required),
-        expenseDate: new FormControl('', { validators: [Validators.required], updateOn: 'blur' },),
-        expenseCategory: new FormControl(''),
-        expenseNote: new FormControl(''),
+    dailyExpForm = new UntypedFormGroup({
+        expenseAmount: new UntypedFormControl('', Validators.required),
+        expenseDate: new UntypedFormControl('', { validators: [Validators.required], updateOn: 'blur' },),
+        expenseCategory: new UntypedFormControl(''),
+        expenseNote: new UntypedFormControl(''),
     });
 
     expenesesList: any[] = [];

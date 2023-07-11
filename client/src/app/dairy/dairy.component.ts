@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-dairy',
@@ -13,9 +13,9 @@ export class DairyComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  dairyForm = new FormGroup({
-    dairyDate: new FormControl('', { validators: [Validators.required], updateOn: 'blur' },),
-    dairyNote: new FormControl('', { validators: [Validators.required] }),
+  dairyForm = new UntypedFormGroup({
+    dairyDate: new UntypedFormControl('', { validators: [Validators.required], updateOn: 'blur' },),
+    dairyNote: new UntypedFormControl('', { validators: [Validators.required] }),
   });
 
 
