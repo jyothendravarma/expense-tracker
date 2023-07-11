@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "codespace": "ng serve --host=0.0.0.0 --public-host=jyothendravarma-turbo-memory-g4xx7wqw5jp2v57r-4200.preview.app.github.dev --configuration codespace" 
+    "codespace": "ng serve --host=0.0.0.0 --public-host=jyothendravarma-turbo-memory-g4xx7wqw5jp2v57r-4200.preview.app.github.dev --configuration codespace"
   },
   "private": true,
   "dependencies": {

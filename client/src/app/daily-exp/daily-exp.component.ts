@@ -62,4 +62,8 @@ export class DailyExpComponent implements OnInit {
         console.log(e.target.value);
         this.dailyExpForm.controls['expenseCategory'].setValue(e.target.value, { onlySelf: true })
     }
+
+    OpenPopup() {
+        alert("open");
+    }
 }

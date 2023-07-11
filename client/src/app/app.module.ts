@@ -20,12 +20,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ViewDailyExpComponent } from './view-daily-exp/view-daily-exp.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
+import { DairyComponent } from './dairy/dairy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DailyExpComponent,
-    ViewDailyExpComponent
+    ViewDailyExpComponent,
+    DairyComponent
   ],
   imports: [
     BrowserModule,

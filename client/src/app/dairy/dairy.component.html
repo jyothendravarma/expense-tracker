@@ -1,0 +1,13 @@
+<form [formGroup]="dairyForm" #dailyForm="ngForm">
+    <mat-form-field appearance="outline" class="md-5">
+        <mat-label>Dairy Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dairyDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="md-5">
+        <mat-label>Dairy Note</mat-label>
+        <textarea matInput formControlName="dairyNote"></textarea>
+    </mat-form-field>
+</form>

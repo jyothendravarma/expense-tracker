@@ -1,33 +1,36 @@
-<form [formGroup]="dailyExpForm" (ngSubmit)="onSubmit()" #dailyForm="ngForm">
+<button mat-button (click)="OpenPopup()">Add Exepnse</button>
+<div class="dailyExpensePopup">
+    <form [formGroup]="dailyExpForm" (ngSubmit)="onSubmit()" #dailyForm="ngForm">
 
-    <mat-form-field appearance="outline" class="md-5">
-        <mat-label>Expense Date</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="expenseDate">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
+        <mat-form-field appearance="outline" class="md-5">
+            <mat-label>Expense Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="expenseDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
-    <mat-form-field appearance="outline" class="md-5">
-        <mat-label>Expense Amount</mat-label>
-        <input type="number" matInput placeholder="Amount" required formControlName="expenseAmount">
-    </mat-form-field>
+        <mat-form-field appearance="outline" class="md-5">
+            <mat-label>Expense Amount</mat-label>
+            <input type="number" matInput placeholder="Amount" required formControlName="expenseAmount">
+        </mat-form-field>
 
-    <mat-form-field appearance="outline" class="field-space">
-        <mat-select formControlName="expenseCategory" required (change)="changeCategory($event)">
-            <mat-option *ngFor="let category of expenseCategories" [value]="category">{{category}}</mat-option>
-        </mat-select>
-        <mat-label>Category</mat-label>
-    </mat-form-field>
+        <mat-form-field appearance="outline" class="field-space">
+            <mat-select formControlName="expenseCategory" required (change)="changeCategory($event)">
+                <mat-option *ngFor="let category of expenseCategories" [value]="category">{{category}}</mat-option>
+            </mat-select>
+            <mat-label>Category</mat-label>
+        </mat-form-field>
 
-    <mat-form-field appearance="outline" class="md-5">
-        <input matInput placeholder="Simple placeholder" formControlName="expenseNote">
-        <mat-label>Note</mat-label>
-    </mat-form-field>
-    <button mat-stroked-button color="primary" type="submit"
-        [disabled]="!dailyExpForm.valid || isFormSubmitted">Add</button>
-</form>
+        <mat-form-field appearance="outline" class="md-5">
+            <input matInput placeholder="Simple placeholder" formControlName="expenseNote">
+            <mat-label>Note</mat-label>
+        </mat-form-field>
+        <button mat-stroked-button color="primary" type="submit"
+            [disabled]="!dailyExpForm.valid || isFormSubmitted">Add</button>
+    </form>
 
-<!-- {{dailyExpForm.value | json}}
+    <!-- {{dailyExpForm.value | json}}
 {{dailyExpForm.status | json}} -->
-<hr />
+    <hr />
+</div>
 <app-view-daily-exp [list]="expenesesList"></app-view-daily-exp>
